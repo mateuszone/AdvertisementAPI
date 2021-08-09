@@ -18,7 +18,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
     ordering_fields = ['name']
 
 
-class OfferViewSet(viewsets.ModelViewSet):
+class OffersViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows all CRUD operations on Offers Model.
     """
