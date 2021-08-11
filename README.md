@@ -1,42 +1,40 @@
 # Advertisment REST API
 
-Simple REST app for advertisment
+#### Simple REST app for advertisment
 
 #### Written with:
-### Python 3.8
-### Djangorestframework 3.12.4
-### Django 3.2.6
+##### Python 3.8
+##### Djangorestframework 3.12.4
+##### Django 3.2.6
 
 # Installation
 
-Install with pip:
+#### Install with pip:
 
 `$ pip install -r requirements.txt`
 
 
-Create db and make some migrations in terminal
+#### Create db and make some migrations in terminal
 
 `python3 manage.py makemigrations`
 
 `python3 manage.py migrate`
 
-
-Create superuser to enter admin panel
+#### Create superuser to enter admin panel
 
 `python3 manage.py createsuperuser`
 
+#### Enter some data to db in admin panel
 
-Enter some data to db in admin panel
+#### Run Docker
 
-Run Docker
+##### In repository you have files: Dockerfile and docker-compose.yml.
 
-In repository you have files: Dockerfile and docker-compose.yml.
-
-Build and run server with app:
+##### Build and run server with app:
 
 `$ docker-compose up -d`
 
-Stop sever:
+##### Stop sever:
 
 `$ docker-compose down`
 
