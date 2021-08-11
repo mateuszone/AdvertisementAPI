@@ -6,12 +6,10 @@ from factory.faker import Faker
 from factory import Sequence, PostGenerationMethodCall, sequence, RelatedFactory, RelatedFactoryList
 from factory import SubFactory
 
-
 from API.models import Category
 
 
 class CategoryFactory(DjangoModelFactory):
-
     id = None
     name = None
 
@@ -35,18 +33,11 @@ class CategoryFactory(DjangoModelFactory):
         model = 'API.Category'
 
 
-# current_category = Category.objects.last().id
-
-
 class OfferFactory(DjangoModelFactory):
     title = Faker('word')
     description = Faker('paragraph')
     price = Faker('credit_card_security_code')
-    category = RelatedFactoryList('API.factories.CategoryFactory',
-                                  'id'
-
-                                  # size=lambda: randint(1, 5)
-                                  )
+    category = factory.Iterator(Category.objects.all())
 
     class Meta:
         model = 'API.Offer'
