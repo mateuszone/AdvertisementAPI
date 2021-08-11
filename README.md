@@ -48,6 +48,8 @@
 
 `[GET] /api/category/`
 
+`[GET] /api/category/{offer.id}/`
+
 `[POST] /api/category/`
 
 `[PUT] /api/category/{category.id}/`
@@ -60,6 +62,8 @@
 ##### On this url you can enter additional query parameter "category" after ? to retrieve only records within specified category
 
 `[GET] /api/offers/`
+
+`[GET] /api/offers/{offer.id}/`
 
 `[POST] /api/offers/`
 
