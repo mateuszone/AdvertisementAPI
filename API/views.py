@@ -10,7 +10,8 @@ from API.serializers import CategorySerializer, OfferMIniSerializer, OfferSerial
 
 class CategoryViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows Categories to be viewed or edited.
+    API endpoint that allows all CRUD operations on Category Model. Additionaly user can use ordering filter to set order
+    of records
     """
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -20,7 +21,8 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 class OffersViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows all CRUD operations on Offers Model.
+    API endpoint that allows all CRUD operations on Offers Model. User can restrict result by query parameter "category"
+    in the URL.
     """
     # queryset = Offer.objects.all()
     serializer_class = OfferSerializer
