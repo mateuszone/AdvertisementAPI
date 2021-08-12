@@ -19,8 +19,7 @@
 
 `$ pip install -r requirements.txt`
 
-#### Create db and make some migrations in terminal. If you will not use docker and want to use sqlite3 db just comment out current DATABASE settings with postgre in settings.py and uncomment DATABASE with sqlite3 settings.
-#### If you want to use postgres on local server you need to set up database settings in settings.py
+#### Create db and make some migrations in terminal. If you will not use docker and want to use sqlite3 db just comment out current DATABASE settings with postgre in settings.py and uncomment DATABASE with sqlite3 settings. If you want to use postgres on local server you need to set up database settings in settings.py
 
 
 `python3 manage.py migrate`
