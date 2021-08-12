@@ -1,8 +1,9 @@
-# Advertisment REST API
+# Advertisement REST API
 
-#### Simple REST app for advertisment
+#### Simple REST app for advertisement
 
-#### Written with:
+
+#### Technology:
 
 ##### Python 3.8
 
@@ -18,9 +19,9 @@
 
 `$ pip install -r requirements.txt`
 
-#### Create db and make some migrations in terminal
+#### Create db and make some migrations in terminal. If you will not use docker and want to use sqlite3 db just 
+#### comment out current DATABASE settings with postgre in settings.py and uncomment DATABASE with sqlite3 settings.
 
-`python3 manage.py makemigrations`
 
 `python3 manage.py migrate`
 
@@ -30,11 +31,17 @@
 
 #### Enter some data to db in admin panel
 
-#### Run Docker
 
-##### In repository you have files: Dockerfile and docker-compose.yml.
+## Run Docker
 
-##### create .env file in AdvertismentAPI catalog and copy of it in API catalog and add custom env variables to set up postre db.
+##### In repository, you have files: Dockerfile and docker-compose.yml.
+
+##### create .env file in AdvertisementAPI catalog and copy of it in API catalog and add custom env variables to set up 
+##### postgre db.
+
+`POSTGRES_DB=type_your_db_name
+POSTGRES_USER=type_your_username
+POSTGRES_PASSWORD=type_your_password`
 
 `sudo docker-compose build`
 
@@ -44,7 +51,7 @@
 
 `sudo docker ps`
 
-##### copy id of the conteinerid with web in name and go back to previous terminal and type command with copied conteinerid:
+##### copy id of the conteinerid with web in name and type below command with copied conteinerid:
 
 `sudo docker exec -it conteinerid bash`
 
@@ -52,11 +59,12 @@
 
 `python3 manage.py migrate`
 
-##### To populate db to get more records use manage.py custom command "seed" which i created for this API:
+##### To populate db to get more records use manage.py custom command "seed" in default it adds 10 records, but you can set
+##### your own number of records:
 
 `python3 manage.py seed`
 
-##### Stop sever:
+##### If you want to Stop sever:
 
 `$ docker-compose down`
 
