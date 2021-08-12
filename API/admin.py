@@ -11,7 +11,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', ]
     search_fields = ('name',)
     list_filter = ['name', ]
-    # list_editable = ('name')
 
 
 @admin.register(Offer)
