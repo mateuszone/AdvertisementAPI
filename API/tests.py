@@ -17,20 +17,12 @@ class CategoryViewSetTestCase(APITestCase):
 
     def setUp(self):
         self.category = CategoryFactory()
-        # self.data = json.loads(
-        #     '{ "title": "test", "description": "description", "price": 213.12, "category": self.category.id }')
-        # self.data = {'id':12, 'title': 'test', 'description': 'description', 'price': 213.12, 'category': 1}
-        self.data = {'pkey': Category.objects.last().id + 12, 'name': f'{self.category.name+"1"}'}
+        self.data = {'name': f'{self.category.name + "1"}'}
 
     def test_category_create(self):
-        # factory = APIRequestFactory()
-        # request = factory.post(self.list_url, json.dumps(self.data), format='json')
-        # response = CategoryViewSet.as_view({'post': 'create'})
-        # print(response(request).status_code)
-        # self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        serialized_rollback = True
         response = self.client.post('/api/category/', json.dumps(self.data), content_type='application/json')
-        print(response.json())
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
     def test_category_list(self):
         response = self.client.get(self.list_url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -58,6 +50,8 @@ class OffersViewSetTestCase(APITestCase):
     def setUp(self):
         self.category = CategoryFactory()
         self.offer = OfferFactory()
+        self.data = {'title': f'{self.offer.title + "asd"}', 'description': f'{self.offer.description}' + "asdasd",
+                     'price': float(f'{self.offer.price}'), 'category_id': self.category.id}
 
     def test_offer_list(self):
         response = self.client.get(self.list_url)
