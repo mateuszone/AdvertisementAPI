@@ -20,7 +20,7 @@ class CategoryViewSetTestCase(APITestCase):
         # self.data = json.loads(
         #     '{ "title": "test", "description": "description", "price": 213.12, "category": self.category.id }')
         # self.data = {'id':12, 'title': 'test', 'description': 'description', 'price': 213.12, 'category': 1}
-        self.data = {f'{self.category.name}': 'test'}
+        self.data = {'pkey': Category.objects.last().id + 12, 'name': f'{self.category.name+"1"}'}
 
     def test_category_create(self):
         # factory = APIRequestFactory()
@@ -28,6 +28,7 @@ class CategoryViewSetTestCase(APITestCase):
         # response = CategoryViewSet.as_view({'post': 'create'})
         # print(response(request).status_code)
         # self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        serialized_rollback = True
         response = self.client.post('/api/category/', json.dumps(self.data), content_type='application/json')
         print(response.json())
     def test_category_list(self):
