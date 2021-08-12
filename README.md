@@ -21,6 +21,7 @@
 
 #### Create db and make some migrations in terminal. If you will not use docker and want to use sqlite3 db just 
 #### comment out current DATABASE settings with postgre in settings.py and uncomment DATABASE with sqlite3 settings.
+#### If you want to use postgres on local server you need to set up database settings in settings,py
 
 
 `python3 manage.py migrate`
@@ -29,7 +30,10 @@
 
 `python3 manage.py createsuperuser`
 
-#### Enter some data to db in admin panel
+##### To populate db to get more records use manage.py custom command "seed" in default it adds 10 records, but you can set
+##### your own number of records:
+
+`python3 manage.py seed`
 
 
 ## Run Docker
@@ -104,7 +108,7 @@ POSTGRES_PASSWORD=type_your_password`
 
 `[DELETE] /api/offers/{offer.id}/`
 
-### Tests
+## Tests
 
 #### To run simple test type in terminal:
 
