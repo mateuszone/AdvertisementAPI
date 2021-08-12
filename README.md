@@ -42,8 +42,12 @@
 ##### postgre db.
 
 `POSTGRES_DB=type_your_db_name`
+
 `POSTGRES_USER=type_your_username`
+
 `POSTGRES_PASSWORD=type_your_password`
+
+##### build docker and docker-up
 
 `sudo docker-compose build`
 
