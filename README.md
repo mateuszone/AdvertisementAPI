@@ -19,12 +19,12 @@
 
 `$ pip install -r requirements.txt`
 
-#### Create db and make some migrations in terminal. If you will not use docker and want to use sqlite3 db just comment out current DATABASE settings with postgre in settings.py and uncomment DATABASE with sqlite3 settings. If you want to use postgres on local server you need to set up database settings in settings.py
+#### Create db and make some migrations in terminal. If you will not use docker and want to use sqlite3 db just comment out current DATABASE settings with postgre in settings.py and uncomment DATABASE with sqlite3 settings. If you want to use postgres on local server you need to set up database settings in settings.py:
 
 
 `python3 manage.py migrate`
 
-#### Create superuser to enter admin panel
+#### Create superuser to enter admin panel:
 
 `python3 manage.py createsuperuser`
 
@@ -38,7 +38,7 @@
 
 ##### In repository, you have files: Dockerfile and docker-compose.yml.
 
-##### create .env file in AdvertisementAPI catalog and copy of it in API catalog and add custom env variables to set up postgre db.
+##### create .env file in AdvertisementAPI catalog and copy of it in API catalog and add custom env variables to set up postgre db:
 
 `POSTGRES_DB=type_your_db_name`
 
@@ -46,13 +46,13 @@
 
 `POSTGRES_PASSWORD=type_your_password`
 
-##### build docker and docker-up
+##### build docker and docker-up:
 
 `sudo docker-compose build`
 
 `sudo docker-compose up`
 
-##### open another terminal window
+##### open another terminal window:
 
 `sudo docker ps`
 
@@ -64,7 +64,8 @@
 
 `python3 manage.py migrate`
 
-##### To populate db to get more records use manage.py custom command "seed" in default it adds 10 records, but you can set your own number of records:
+##### To populate db to get more records use manage.py custom command "seed".
+##### In default, it adds 10 records, but you can set your own number of records:
 
 `python3 manage.py seed`
 
@@ -80,7 +81,7 @@
 
 ##### These urls allow everyone to make all crud operations without registration.
 
-##### In url related to category you can set ordering by name field (asc or desc).
+##### In url related to category you can set ordering by name field (asc or desc).:
 
 `[GET] /api/category/`
 
@@ -96,7 +97,7 @@
 
 ##### These urls allow everyone to make all crud operations without registration.
 
-##### On this url you can enter additional query parameter "category" after ? to retrieve only records within specified category
+##### On this url you can enter additional query parameter "category" after ? to retrieve only records within specified category:
 
 `[GET] /api/offers/`
 
