@@ -32,6 +32,9 @@ class CategoryFactory(DjangoModelFactory):
     class Meta:
         model = 'API.Category'
 
+    # class Params:
+    #     body_raw = factory.SubFactory()
+
 
 class OfferFactory(DjangoModelFactory):
     title = Faker('word')

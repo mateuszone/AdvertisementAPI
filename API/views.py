@@ -47,4 +47,4 @@ class OffersViewSet(viewsets.ModelViewSet):
     def destroy(self, request, *args, **kwargs):
         offer = self.get_object()
         offer.delete()
-        return Response('Offer successfully deleted')
+        return Response({"message": "Offer successfully deleted"})
