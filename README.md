@@ -38,8 +38,7 @@
 
 ##### In repository, you have files: Dockerfile and docker-compose.yml.
 
-##### create .env file in AdvertisementAPI catalog and copy of it in API catalog and add custom env variables to set up 
-##### postgre db.
+##### create .env file in AdvertisementAPI catalog and copy of it in API catalog and add custom env variables to set up postgre db.
 
 `POSTGRES_DB=type_your_db_name`
 
@@ -65,8 +64,7 @@
 
 `python3 manage.py migrate`
 
-##### To populate db to get more records use manage.py custom command "seed" in default it adds 10 records, but you can set
-##### your own number of records:
+##### To populate db to get more records use manage.py custom command "seed" in default it adds 10 records, but you can set your own number of records:
 
 `python3 manage.py seed`
 
@@ -82,7 +80,7 @@
 
 ##### These urls allow everyone to make all crud operations without registration.
 
-##### On this url you can set ordering by name field (asc or desc).
+##### In url related to category you can set ordering by name field (asc or desc).
 
 `[GET] /api/category/`
 
